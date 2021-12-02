@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <title>Les BD</title>
+</head>
+
+<body>
+
+
+
+
+    <div class="container"> <!-- container globale-->
+        <div id="side-bar">  <!--container menu hamburger-->
+            <div class="toggle-button" id="toggle-button">  <!--Logo menu hamburger-->
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </div>  <!-- menu hamburger-->
+            
+            <ul>
+                <a href="#hautDePage" title="Retour en haut de page">
+                    <li>Menu</li>
+                </a>
+                <a href="#panierAncre" title="accéder directement au panier">
+                    <li>Panier</li>
+                </a>
+                <a href="#meteo" title="accéder à la météo">
+                    <li>Météo</li>
+                </a>
+                <li title="BD-Librairie  Tel; 09 99 99 00 55">Contact</li>
+
+                
+            </ul>
+
+        </div>
+        <div>    <!--div scroll parcours des bds-->
+            <input type="range" class="scrollSelectionId"  id="id" value="0" min="0" title="Parcourir">
+        </div>
+        <div class="box">  <!-- container gauche en + de 1070 //  ou  haut en -de 1070 -->
+            
+            <div class="boxy" id="hautDePage">Liste des BD
+                <div class="top"></div>
+                <div class="bottom"></div>
+                <div class="left"></div>
+                <div class="right"></div>
+            </div>
+
+
+
+            <p id="messageId">
+
+                <input type="text" id="champRecherche" placeholder="Recherche par saisie" value="" autocomplete="off">
+                <div id="suggestions"></div>
+
+            </p>
+            <p>
+                
+                <label for="serie">Série :</label>
+                <input type="text" id="serie" value='0' min='0'>
+
+                <label for="numero">Album N° :</label>
+                <input type="number" id="numero" value='0' min='0'>
+
+                <label for="titre">Titre :</label>
+                <input type="text" id="titre" value='0' min='0'>
+
+                <label for="auteur">Auteur :</label>
+                <input type="text" id="auteur" value='0' min='0'>
+            </p>
+            <p>
+                <label for="prix">Prix :</label>
+                <input type="number" id="prix" readonly>
+            </p>
+            <div is="toto">
+                <img src="images/noComicsMini.jpeg" id="albumMini">
+            </div>
+            <button id="Achat" title="Ajouter l'article selectionné au panier">Acheter</button>
+            <div class="boxPanier" id="panierAncre">          <!--container panier-->
+
+
+                <label id="price" for="prix">&emsp;&emsp; Panier</label>
+                
+                <img src="images/panier.png" id="imgPanier"  alt="logo panier">
+                
+                
+                <ul id="panier">
+                </ul>
+                <div class="boxy">
+                    <div class="top"></div>
+                    <div class="bottom"></div>
+                    
+                    <div class="left"></div>
+                    <div class="right"></div>
+                    <p id="compteur" class="resultatPrix" title="Prix TVA incluse"></p>
+                </div>
+            </div>
+        </div>
+        <div class="box" id="boxId">        <!-- container droite en + de 1070 //  ou  bas en -de 1070 -->
+
+            <div class="image">
+
+                <img src="images/noComics.jpeg" id="album">
+
+            </div>
+            <div id="meteo" style="background:url(images/meteo.jpg)" no-repeat background-size: cover;>Météo   <!--container météo-->
+                <div id="date">
+                    <p id="dating"></p>
+                    <p id="hour"></p>
+                </div>
+
+
+                <input type="text" id="rechercheVille" placeholder="Entrez le nom d'une ville" title="Entrez une ville mondiale au choix"/>
+                <input type="button" value="rechercher une température" onclick="buttonClickGET();" title="Tappez une ville avant de cliquer"/>
+                <p id="zone_meteo"></p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+
+    <script src="data/albums.js"></script>
+    <script src="data/series.js"></script>
+    <script src="data/auteurs.js"></script>
+    <script src="js/modeleBD.js"></script>
+</body>
+
+</html>
